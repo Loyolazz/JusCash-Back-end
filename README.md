@@ -1,6 +1,7 @@
 # JusCash-Back-end
 ## API Documentation
-Esta API foi desenvolvida para gerenciar usuários e leads, permitindo a criação, atualização e consulta de leads, além de funcionalidades de autenticação de usuários.
+API do backend do JusCash, responsável por gerenciar a autenticação de usuários, operações relacionadas a leads, e outras funcionalidades essenciais do sistema.
+Esta API oferece endpoints seguros utilizando JWT para proteger dados sensíveis e garantir que apenas usuários autenticados possam acessar determinadas operações
 
 ### Base URL
 
