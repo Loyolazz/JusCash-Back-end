@@ -3,6 +3,17 @@
 API do backend do JusCash, responsável por gerenciar a autenticação de usuários, operações relacionadas a leads, e outras funcionalidades essenciais do sistema.
 Esta API oferece endpoints seguros utilizando JWT para proteger dados sensíveis e garantir que apenas usuários autenticados possam acessar determinadas operações
 
+## Como executar a aplicação
+
+1. Clone o repositório para a sua máquina.
+    1. Use a versão do node que seja ***≥v16.13.0***.
+2. Instale as dependências utilizando o comando `npm install`.
+3. Gere Prisma Client com o comando `npx prisma generate`
+4. Configure o PostgreSQL no computador, crie o DB.
+5. Execute as migrações do banco de dados utilizando o comando `npx prisma migrate dev`.
+6. Inicie a aplicação utilizando o comando `npm run dev`.
+7. Acesse a aplicação através do endereço `http://localhost:3322/api`.
+
 ### Base URL
 
 `http://localhost:3322/api`
@@ -17,7 +28,6 @@ Exemplo de Cabeçalho de Autenticação:
 
 ### Overview
 Esta API foi desenvolvida para gerenciar usuários e leads, permitindo a criação, atualização e consulta de leads, além de funcionalidades de autenticação de usuários.
-
 
 `http://localhost:3322/api`
 
@@ -139,13 +149,3 @@ curl -X GET "http://localhost:3322/api/lead/1" \
 }
 ```
 >Respostas de Erro: `500 Internal Server Error: Erro ao buscar o lead.`
-
-## Como executar a aplicação
-
-1. Clone o repositório para a sua máquina.
-   1. Use a versão do node que seja ***≥v16.13.0***.
-2. Instale as dependências utilizando o comando `npm install`.
-3. Gere Prisma Client com o comando `npx prisma generate`
-3. Execute as migrações do banco de dados utilizando o comando `npx prisma migrate dev`.
-4. Inicie a aplicação utilizando o comando `npm run dev`.
-5. Acesse a aplicação através do endereço `http://localhost:3322/api`.
