@@ -94,7 +94,7 @@ curl -X POST "http://localhost:3322/api/user" \
 
 **email**: string (obrigatório) - Email do lead.
 
-**phone**: string (opcional) - Telefone do lead.
+**phone**: string (obrigatório) - Telefone do lead.
 > Exemplo de Requisição:
 ```
 curl -X POST "http://localhost:3322/api/lead" \
@@ -103,6 +103,7 @@ curl -X POST "http://localhost:3322/api/lead" \
 -d '{
   "name": "Nome do Lead",
   "email": "lead@email.com"
+  "phone": "Telefone do Lead"
 }'
 ```
 >Resposta de Sucesso:
