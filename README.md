@@ -27,8 +27,7 @@ Exemplo de Cabeçalho de Autenticação:
 
 `Authorization: Bearer <seu_token_jwt>`
 
-
-Endpoints
+### **Endpoints**
 #### 1. Autenticação.
 
    * Login de Usuário: Autentica o usuário e retorna um token JWT. 
@@ -58,6 +57,31 @@ curl -X POST "http://localhost:3322/api/auth/login" \
 ```
 > Respostas de Erro:
 `500 Internal Server Error: Erro ao fazer login.`
+
+#### 2. Usuários
+* Criar Usuário: Cria um novo usuário.
+    * Método: `POST: /user`
+> Parâmetros de Requisição:
+
+**name**: string (obrigatório) - Nome do usuário.
+
+**email**: string (obrigatório) - Email do usuário.
+
+**password**: string (obrigatório) - Senha do usuário.
+
+> Exemplo de Requisição:
+```
+curl -X POST "http://localhost:3322/api/user" \
+-H "Content-Type: application/json" \
+-d '{
+  "name": "Nome do Usuário",
+  "email": "usuario@email.com",
+  "password": "suaSenha"
+}'
+```
+>Resposta de Sucesso: `201 Created: Usuário criado com sucesso.`
+
+> Respostas de Erro: `500 Internal Server Error: Erro ao criar usuário.`
 
 #### 3. Leads
 
@@ -96,6 +120,7 @@ curl -X POST "http://localhost:3322/api/lead" \
   * Método: `GET: /lead/:id`
 
 > Parâmetros de Requisição:
+
 **id**: number (obrigatório) - ID do lead.
 
 > Exemplo de Requisição:
@@ -112,32 +137,6 @@ curl -X GET "http://localhost:3322/api/lead/1" \
 }
 ```
 >Respostas de Erro: `500 Internal Server Error: Erro ao buscar o lead.`
-
-
-#### 2. Usuários
-* Criar Usuário: Cria um novo usuário. 
-  * Método: `POST: /user`
-> Parâmetros de Requisição:
-> 
-**name**: string (obrigatório) - Nome do usuário.
-
-**email**: string (obrigatório) - Email do usuário.
-
-**password**: string (obrigatório) - Senha do usuário.
-
-> Exemplo de Requisição:
-```
-curl -X POST "http://localhost:3322/api/user" \
--H "Content-Type: application/json" \
--d '{
-  "name": "Nome do Usuário",
-  "email": "usuario@email.com",
-  "password": "suaSenha"
-}'
-```
->Resposta de Sucesso: `201 Created: Usuário criado com sucesso.`
-
-> Respostas de Erro: `500 Internal Server Error: Erro ao criar usuário.`
 
 ## Como executar a aplicação
 
